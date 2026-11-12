@@ -1,0 +1,37 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"/home/ai/.agents/skills/medico/hooks/scripts/medico_stop_nudge.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"/home/ai/.agents/skills/medico/hooks/scripts/medico_precompact.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"/home/ai/.agents/skills/medico/hooks/scripts/medico_sessionstart.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

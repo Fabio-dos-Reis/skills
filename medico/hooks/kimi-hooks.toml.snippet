@@ -1,0 +1,23 @@
+# ── medico hooks — acrescentar a ~/.kimi-code/config.toml ──────────────────
+# Gerar com: sh Infra/skills/instalar.sh --hooks (escreve em hooks/gerados/).
+# __MEDICO_HOME__ e __PYTHON__ são materializados pelo instalador.
+# O caminho do script vai ENTRE ASPAS dentro do comando: a pasta pessoal pode
+# ter espaços ("home falso") e, sem aspas, o shell parte o comando ao meio.
+# Stop: exit 2 bloqueia o Stop e alimenta o stderr ao modelo (nudge).
+# PreCompact: fire-and-forget (snapshot do estado antes do compact).
+# SessionStart: stdout e acrescentado ao contexto da sessao.
+
+[[hooks]]
+event = "Stop"
+command = "__PYTHON__ \"__MEDICO_HOME__/hooks/scripts/medico_stop_nudge.py\""
+timeout = 30
+
+[[hooks]]
+event = "PreCompact"
+command = "__PYTHON__ \"__MEDICO_HOME__/hooks/scripts/medico_precompact.py\""
+timeout = 30
+
+[[hooks]]
+event = "SessionStart"
+command = "__PYTHON__ \"__MEDICO_HOME__/hooks/scripts/medico_sessionstart.py\""
+timeout = 30

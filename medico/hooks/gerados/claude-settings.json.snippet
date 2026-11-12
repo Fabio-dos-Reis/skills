@@ -1,0 +1,38 @@
+{
+  "//": "medico hooks — gerar com: sh Infra/skills/instalar.sh --hooks (escreve em hooks/gerados/) e mergear em ~/.claude/settings.json. /home/ai/.agents/skills/medico e python3 são materializados pelo instalador. O caminho do script vai ENTRE ASPAS dentro do comando: a pasta pessoal pode ter espaços e, sem aspas, o shell parte o comando ao meio. Stop: exit 2 = decision:block (stderr vai para o Claude). PreCompact: fire-and-forget. SessionStart: stdout vira additionalContext.",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"/home/ai/.agents/skills/medico/hooks/scripts/medico_stop_nudge.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"/home/ai/.agents/skills/medico/hooks/scripts/medico_precompact.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"/home/ai/.agents/skills/medico/hooks/scripts/medico_sessionstart.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

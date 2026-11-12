@@ -2,7 +2,7 @@
 
 Portable prompt skills for coding agents (Claude Code · Kimi Code · OpenCode · any agent that reads instruction files). Plain Markdown + Python stdlib, no dependencies.
 
-> Skills para agentes de IA — documentação de projecto com disciplina: regras permanentes, registo de medições e manutenção contínua.
+> Prompt skills for AI agents — project documentation with discipline: permanent house rules, a measurement log and continuous maintenance.
 
 | Skill | What it does |
 |---|---|
